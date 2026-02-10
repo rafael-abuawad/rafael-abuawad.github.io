@@ -6,120 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rafael Abuawad</title>
     <style>
+        html,
         body {
             margin: 0;
             min-height: 100vh;
-            background: #000;
+            background: #000 url("static/images/background.png") center center no-repeat;
+            background-size: cover;
         }
 
         .page {
-            position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        /* Space + planet layer (background and center image) */
-        .space-layer {
-            position: absolute;
-            inset: 0;
-            background: url("static/images/background.png") center / cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .space-layer .planet {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-        }
-
-        /* CRT effect on top of space and planet only */
-        .crt {
-            position: relative;
-        }
-
-        .crt::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
-        /* Content above CRT – system.css look */
-        .content-layer {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             gap: 1.5rem;
-            padding: 1rem;
-            text-align: center;
-            padding-top: 2rem;
         }
 
-        .content-layer .title {
+        .title {
             margin: 0;
             font-family: Chicago_12, Chicago, sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
+            color: #fff;
         }
 
-        .content-layer .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
+        .planet {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
         }
-
-        .content-layer .links .btn {
-            text-decoration: none;
-        }
-
-       .title {
-        font-family: Chicago_12, Chicago, sans-serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-       }
     </style>
 </head>
 
 <body>
     <main class="page">
-        <div class="space-layer crt" aria-hidden="true">
-            <img src="static/images/planet.png" alt="" class="planet" width="200" height="200" />
-        </div>
+        <h1 class="title">Hi, I'm Rafael Abuawad</h1>
 
-        <div class="content-layer">
-            <h1 class="title">Hi, I'm Rafael Abuawad</h1>
-            <section class="field-row links" role="navigation">
-                <a href="https://twitter.com/rabuawad_" target="_blank" rel="noopener noreferrer">
-                    <button>Twitter</button>
-                </a>
-                <a href="https://github.com/rafael-abuawad" target="_blank" rel="noopener noreferrer">
-                    <button>GitHub</button>
-                </a>
-                <a href="https://paragraph.com/@rabuawad" target="_blank" rel="noopener noreferrer">
-                    <button>Paragraph</button>
-                </a>
-                <a href="https://dev.to/rabuawad" target="_blank" rel="noopener noreferrer">
-                    <button>DEV</button>
-                </a>
-            </section>
-        </div>
+        <img src="static/images/planet.png" alt="Planet" class="planet" width="200" height="200" />
+
+        <section class="field-row links" role="navigation">
+            <a href="https://twitter.com/rabuawad_" target="_blank" rel="noopener noreferrer">
+                <button>Twitter</button>
+            </a>
+            <a href="https://github.com/rafael-abuawad" target="_blank" rel="noopener noreferrer">
+                <button>GitHub</button>
+            </a>
+            <a href="https://paragraph.com/@rabuawad" target="_blank" rel="noopener noreferrer">
+                <button>Paragraph</button>
+            </a>
+            <a href="https://dev.to/rabuawad" target="_blank" rel="noopener noreferrer">
+                <button>DEV</button>
+            </a>
+        </section>
     </main>
 </body>
 
